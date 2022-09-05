@@ -3,7 +3,7 @@ defmodule Drop do
 
  def fall_velocity(planet_o, distance) when distance > 0 do
     gravity = case planet_o do
-      :earth -> * 9.8
+      :earth -> 9.8
       :mars  -> 3.71
       :moon  -> 1.6
     end
