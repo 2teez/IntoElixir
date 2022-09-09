@@ -34,3 +34,17 @@ defmodule NRange do
     end
   end
 end
+
+defmodule Overall do
+  def product(value) do
+    product(value, 1)
+  end
+
+  defp product([], acc) do
+    acc
+  end
+
+  defp product([h|t], acc) do
+    product(t, acc * h)
+  end
+end
