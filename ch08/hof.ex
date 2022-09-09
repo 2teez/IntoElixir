@@ -19,6 +19,7 @@ defmodule Main do
 end
 
 defmodule Pprint do
+  @spec pp(String.t(), fun()) :: :ok
   def pp(msg, function) do
     IO.puts(msg)
     function.()
