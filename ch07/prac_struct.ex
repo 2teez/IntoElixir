@@ -30,6 +30,18 @@ defmodule StructDrop do
   end
 end
 
+# using defprotocol, adding function to struct
+defprotocol Valid do
+  @doc "checking for the validity of the struct"
+  def valid?(data)
+end
+
+defimpl Valid, for: Person do
+  def valid?(person) do
+    person.age > 0 and person.name != ""
+  end
+end
+
 """
 [Person, Planetmo, StructDrop, Tower]
 iex(11)> StructDrop.fall_velocity :mars, 45
@@ -46,5 +58,5 @@ iex(15)> tower = %Tower{tower | planetmo: :mars}
 %Tower{height: 45, location: "", name: "", planetmo: :mars}
 iex(16)> StructDrop.fall_velocity tower
 18.272930799409274
-iex(17)>  
+iex(17)>
 """
