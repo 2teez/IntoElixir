@@ -14,6 +14,13 @@ defmodule Main do
     IO.puts(to_string("#{Hof.tripple(x, my_function)}"))
 
     # using another anonymous function style
-    IO.puts(to_string("#{Hof.tripple(3, &(200, &1))}"))
+    IO.puts(to_string("#{Hof.tripple(3, &(200 * &1))}"))
+  end
+end
+
+defmodule Pprint do
+  def pp(msg, function) do
+    IO.puts(msg)
+    function.()
   end
 end
